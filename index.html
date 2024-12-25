@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,7 +33,7 @@
         /* Header & Navigation */
         .header {
             background: var(--white);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             padding: 1rem;
             position: fixed;
             width: 100%;
@@ -70,7 +71,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/api/placeholder/1920/1080');
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1920/1080');
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -119,7 +120,7 @@
             position: relative;
             overflow: hidden;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
 
@@ -155,7 +156,7 @@
             background: var(--light-gray);
             padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .testimonial-card .quote {
@@ -250,15 +251,34 @@
 
         /* Animations */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .fade-in {
             animation: fadeIn 1s ease-out forwards;
         }
+
+        .contact-item.clickable {
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .contact-item.clickable .btn {
+            display: none;
+        }
     </style>
 </head>
+
 <body>
     <header class="header">
         <nav class="nav-container">
@@ -276,7 +296,8 @@
         <div class="hero-content fade-in">
             <h1>ישיבת דרך חיים</h1>
             <p>מקום שבו מצוינות אקדמית פוגשת ערכים רוחניים</p>
-            <a href="https://www.matara.pro/nedarimplus/online/?mosad=7002951" target="_blank" class="btn">הצטרף אלינו</a>
+            <a href="https://www.matara.pro/nedarimplus/online/?mosad=7002951" target="_blank" class="btn">הצטרף
+                אלינו</a>
         </div>
     </section>
 
@@ -288,16 +309,24 @@
             </div>
             <div class="about-content fade-in" style="text-align: center; margin: 15px;">
                 <h2>ישיבת דרך חיים - מקום שבו כל אחד יכול לצמוח</h2>
-                <p>ישיבת "דרך חיים" במודיעין עילית, שנוסדה בשנת 2021 על ידי הרב מוטי פובידלו, היא מוסד חינוכי ייחודי המציע מסגרת תומכת ומעצימה לבני נוער. הישיבה שמה לה למטרה להעניק מענה מותאם אישית לכל תלמיד, תוך התמקדות בפיתוח וקידום הפוטנציאל האישי שלו.</p>
+                <p>ישיבת "דרך חיים" במודיעין עילית, שנוסדה בשנת 2021 על ידי הרב מוטי פובידלו, היא מוסד חינוכי ייחודי
+                    המציע מסגרת תומכת ומעצימה לבני נוער. הישיבה שמה לה למטרה להעניק מענה מותאם אישית לכל תלמיד, תוך
+                    התמקדות בפיתוח וקידום הפוטנציאל האישי שלו.</p>
 
                 <h2>הגישה החינוכית</h2>
-                <p>בישיבת "דרך חיים" אנו מאמינים בגישה הוליסטית לחינוך, המשלבת בין התפתחות רוחנית לבין כלים מעשיים לחיים. התכנית הלימודית כוללת שלושה סדרי לימוד מובנים ביום, לצד סדנאות העשרה ייחודיות המעניקות כלים פרקטיים להתמודדות עם אתגרי החיים.</p>
+                <p>בישיבת "דרך חיים" אנו מאמינים בגישה הוליסטית לחינוך, המשלבת בין התפתחות רוחנית לבין כלים מעשיים
+                    לחיים. התכנית הלימודית כוללת שלושה סדרי לימוד מובנים ביום, לצד סדנאות העשרה ייחודיות המעניקות כלים
+                    פרקטיים להתמודדות עם אתגרי החיים.</p>
 
                 <h2>המסגרת הלימודית</h2>
-                <p>הישיבה מתאפיינת במספר תלמידים מצומצם (כ-15 תלמידים), המאפשר יחס אישי ותשומת לב מרבית לכל תלמיד. סביבת הלימוד האינטימית מאפשרת לצוות החינוכי להכיר כל תלמיד לעומק ולהתאים עבורו את המענה המיטבי לצרכיו האישיים.</p>
+                <p>הישיבה מתאפיינת במספר תלמידים מצומצם (כ-15 תלמידים), המאפשר יחס אישי ותשומת לב מרבית לכל תלמיד. סביבת
+                    הלימוד האינטימית מאפשרת לצוות החינוכי להכיר כל תלמיד לעומק ולהתאים עבורו את המענה המיטבי לצרכיו
+                    האישיים.</p>
 
                 <h2>החזון</h2>
-                <p>חזונו של הרב פובידלו הוא להעניק לכל תלמיד את ההזדמנות והכלים להתפתח ולהתקדם בחייו. הישיבה שואפת להרים כל בחור מבחינה רוחנית וגשמית כאחד, תוך מתן דגש על פיתוח אישי, העצמה, וחיזוק הביטחון העצמי. אנו מאמינים שכל תלמיד הוא עולם ומלואו, ומחויבים לסייע לו למצוא את דרכו הייחודית בחיים.</p>
+                <p>חזונו של הרב פובידלו הוא להעניק לכל תלמיד את ההזדמנות והכלים להתפתח ולהתקדם בחייו. הישיבה שואפת להרים
+                    כל בחור מבחינה רוחנית וגשמית כאחד, תוך מתן דגש על פיתוח אישי, העצמה, וחיזוק הביטחון העצמי. אנו
+                    מאמינים שכל תלמיד הוא עולם ומלואו, ומחויבים לסייע לו למצוא את דרכו הייחודית בחיים.</p>
             </div>
         </div>
     </section>
@@ -352,20 +381,21 @@
                 <p>נשמח לענות על כל שאלה</p>
             </div>
             <div class="contact-grid">
-                <div class="contact-item">
+                <div class="contact-item clickable" onclick="window.open('https://waze.com/ul/hsv8vteb8t', '_blank')">
                     <i class="fas fa-map-marker-alt"></i>
                     <h3>כתובת</h3>
                     <p>פונוביז' 5, מודיעין עילית</p>
                 </div>
-                <div class="contact-item">
+                
+                <div class="contact-item clickable" onclick="window.open('tel:0527699707', '_blank')">
                     <i class="fas fa-phone"></i>
                     <h3>טלפון</h3>
-                    <p>02-5555555</p>
+                    <p>052-7699707</p>
                 </div>
-                <div class="contact-item">
+                
+                <div class="contact-item clickable" onclick="window.open('https://wa.me/972527699707', '_blank')">
                     <i class="fab fa-whatsapp"></i>
                     <h3>וואטסאפ</h3>
-                    <a href="https://wa.me/YOUR_NUMBER" class="btn">שלח הודעה</a>
                 </div>
             </div>
         </div>
@@ -401,4 +431,5 @@
         });
     </script>
 </body>
+
 </html>
