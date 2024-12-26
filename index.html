@@ -84,6 +84,7 @@
             color: var(--secondary-color);
             font-weight: 500;
             transition: color 0.3s ease;
+            white-space: nowrap;
         }
 
         .nav-links a:hover {
@@ -282,6 +283,11 @@
                 position: relative;
                 transform: none;
                 left: 0%;
+                transform: translateX(40px);
+            }
+
+            .nav-links a {
+                font-size: larger;
             }
 
             .gallery-grid,
@@ -290,10 +296,27 @@
                 grid-template-columns: 1fr;
             }
 
+            .header .nav-links {
+                gap: 1rem;
+            }
+
             .header.scrolled .nav-links {
-                gap: 2rem;
+                gap: 1rem;
+                transform: translateX(20px);
+            }
+
+            .logo {
+                transform: translateX(20px);
+            }
+
+        }
+
+        @media (max-width: 400px) {
+            .nav-links a {
+                font-size: medium;
             }
         }
+
 
         @keyframes fadeIn {
             from {
