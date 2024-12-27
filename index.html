@@ -144,6 +144,16 @@
             margin-bottom: 2rem;
         }
 
+        .hero-logo img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.1;
+            max-width: 500px;
+            pointer-events: none;
+        }
+
         .gallery {
             padding: 5rem 2rem;
             background: var(--light-gray);
@@ -310,12 +320,16 @@
                 transform: translateX(20px);
             }
 
+            .hero-logo img {
+                max-width: 300px;
+            }
         }
 
         @media (max-width: 400px) {
             .nav-links a {
                 font-size: medium;
             }
+
             .nav-links {
                 transform: translateX(30px);
             }
@@ -372,6 +386,9 @@
             <p>מקום שבו מצוינות אקדמית פוגשת ערכים רוחניים</p>
             <a href="https://www.matara.pro/nedarimplus/online/?mosad=7002951" target="_blank" class="btn">הצטרף
                 אלינו</a>
+            <div class="hero-logo">
+                <img src="./assets/לוגו שקוף.gif" alt="Logo">
+            </div>
         </div>
     </section>
 
