@@ -283,6 +283,76 @@
             font-size: 1.2rem;
         }
 
+        .donations {
+            padding: 5rem 2rem;
+            background: var(--light-gray);
+        }
+
+        .donations-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .donations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .donation-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .donation-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .donation-card h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .donation-card .amount {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin: 1rem 0;
+        }
+
+        .donation-card .monthly {
+            color: var(--secondary-color);
+            opacity: 0.8;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .donation-card .description {
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .donation-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--primary-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        .donation-btn:hover {
+            background: #b39558;
+        }
+
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 3rem;
@@ -385,7 +455,7 @@
         <div class="hero-content fade-in">
             <h1>ישיבת דרך חיים</h1>
             <p>מקום שבו מצוינות אקדמית פוגשת ערכים רוחניים</p>
-            <a href="https://www.matara.pro/nedarimplus/online/?mosad=7002951" target="_blank" class="btn">הצטרף
+            <a href="#donations" target="_blank" class="btn">הצטרף
                 אלינו</a>
             <div class="hero-logo">
                 <img src="./assets/לוגו שקוף.gif" alt="Logo">
@@ -466,6 +536,43 @@
         </div>
     </section>
 
+    <section id="donations" class="donations">
+        <div class="donations-container">
+            <div class="section-header">
+                <h2>אפשרויות תרומה</h2>
+                <p>היו שותפים בהחזקת עולם התורה</p>
+            </div>
+            <div class="donations-grid">
+                <div class="donation-card">
+                    <h3>החזקת נשמה</h3>
+                    <div class="amount">₪624</div>
+                    <div class="monthly">₪52 לחודש</div>
+                    <p class="description">החזקת נשמה של בחור מהישיבה למשך שנה שלמה. זכות לימוד התורה תיזקף לזכותכם.</p>
+                    <a href="https://www.matara.pro/nedarimplus/online/?mosad=7002951" target="_blank"
+                        class="donation-btn">לתרומה</a>
+                </div>
+
+                <div class="donation-card">
+                    <h3>שותפות יומית</h3>
+                    <div class="amount">₪1,248</div>
+                    <div class="monthly">₪104 לחודש</div>
+                    <p class="description">שותפות בהחזקת יום לימודים בישיבה. תמיכה בלימוד התורה ובהוצאות השוטפות.</p>
+                    <a href="https://www.matara.pro/nedarimplus/online/?mosad=7002951" target="_blank"
+                        class="donation-btn">לתרומה</a>
+                </div>
+
+                <div class="donation-card">
+                    <h3>תרומה חד פעמית</h3>
+                    <div class="amount">כל סכום</div>
+                    <div class="monthly">תרומה חד פעמית</div>
+                    <p class="description">תמיכה חד פעמית בישיבה לפי בחירתכם. כל תרומה מסייעת בהחזקת מקום התורה.</p>
+                    <a href="https://www.matara.pro/nedarimplus/online/?mosad=7002951" target="_blank"
+                        class="donation-btn">לתרומה</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <section id="contact" class="contact">
         <div class="contact-container">
             <div class="section-header">
