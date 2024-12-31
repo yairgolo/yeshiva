@@ -117,7 +117,7 @@
         }
 
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1920/1080');
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -353,6 +353,61 @@
             background: #b39558;
         }
 
+        .contact-form {
+            padding: 5rem 2rem;
+            background: var(--light-gray);
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            height: 150px;
+            font-size: 1rem;
+            resize: vertical;
+        }
+
+        .form-submit {
+            text-align: center;
+        }
+
+        .form-submit button {
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 5px rgba(198, 167, 102, 0.3);
+        }
+
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 3rem;
@@ -446,7 +501,7 @@
                 <a href="#about">אודות</a>
                 <a href="#gallery">גלריה</a>
                 <a href="#testimonials">המלצות</a>
-                <a href="#contact">צור קשר</a>
+                <a href="#contact-form">צור קשר</a>
             </div>
         </nav>
     </header>
@@ -471,18 +526,26 @@
             </div>
             <div class="about-content fade-in" style="text-align: center; margin: 15px;">
                 <h2>ישיבת דרך חיים - בית חם לכל בחור</h2>
-                <p>ישיבת "דרך חיים" במודיעין עילית היא הרבה יותר מישיבה - היא משפחה.<br/>הישיבה נוסדה בשנת תשפ"א על ידי הרב מרדכי פובידלו, במטרה להעניק מענה ייחודי לבחורים שרוצים להתחבר מחדש לעולם הישיבות <br/>ומחפשים מסגרת שמחזירה להם את האמון בעצמם ובסביבה.</p>
-            
+                <p>ישיבת "דרך חיים" במודיעין עילית היא הרבה יותר מישיבה - היא משפחה.<br />הישיבה נוסדה בשנת תשפ"א על ידי
+                    הרב מרדכי פובידלו, במטרה להעניק מענה ייחודי לבחורים שרוצים להתחבר מחדש לעולם הישיבות <br />ומחפשים
+                    מסגרת שמחזירה להם את האמון בעצמם ובסביבה.</p>
+
                 <h2>גישה חינוכית עם לב</h2>
-                <p>הישיבה פועלת מתוך אמונה שכל בחור זכאי להצליח, עם אהבה, כבוד ואמון ללא תנאים.<br/> אנו מציעים מסגרת תומכת ומקרבת, המשלבת לימוד תורה באווירה חיובית עם פעילויות חברתיות, טיולים וימי גיבוש.<br/> המטרה שלנו היא לבנות אמון עצמי, זהות יהודית יציבה וחיים מתוך קיום המצוות בשמחה.</p>
-            
+                <p>הישיבה פועלת מתוך אמונה שכל בחור זכאי להצליח, עם אהבה, כבוד ואמון ללא תנאים.<br /> אנו מציעים מסגרת
+                    תומכת ומקרבת, המשלבת לימוד תורה באווירה חיובית עם פעילויות חברתיות, טיולים וימי גיבוש.<br /> המטרה
+                    שלנו היא לבנות אמון עצמי, זהות יהודית יציבה וחיים מתוך קיום המצוות בשמחה.</p>
+
                 <h2>מסגרת מותאמת אישית</h2>
-                <p>הישיבה פועלת בגישה גמישה, ללא כללים נוקשים, ומתמקדת במתן תחושת שייכות ואהבה.<br/> לכל בחור מותאמת תכנית אישית, הכוללת שיחות פרטיות, לימוד יומי וחוויות משותפות.<br/> עם השנים, הפכה הישיבה לבית עבור עשרות בחורים שהתחברו מחדש לעולם התורה והמצוות.</p>
-            
+                <p>הישיבה פועלת בגישה גמישה, ללא כללים נוקשים, ומתמקדת במתן תחושת שייכות ואהבה.<br /> לכל בחור מותאמת
+                    תכנית אישית, הכוללת שיחות פרטיות, לימוד יומי וחוויות משותפות.<br /> עם השנים, הפכה הישיבה לבית עבור
+                    עשרות בחורים שהתחברו מחדש לעולם התורה והמצוות.</p>
+
                 <h2>חזון הישיבה</h2>
-                <p>ישיבת "דרך חיים" שואפת להיות קרן אור עבור כל בחור שמחפש דרך חדשה.<br/> אנו כאן כדי להאמין בהם, לתמוך בהם ולהיות הבית שהם צריכים כדי לגלות את עצמם מחדש.<br/> עם צוות מסור ולב רחב, אנו ממשיכים לעמוד לצידם וללוות אותם בכל שלב בדרך החיים.</p>
+                <p>ישיבת "דרך חיים" שואפת להיות קרן אור עבור כל בחור שמחפש דרך חדשה.<br /> אנו כאן כדי להאמין בהם, לתמוך
+                    בהם ולהיות הבית שהם צריכים כדי לגלות את עצמם מחדש.<br /> עם צוות מסור ולב רחב, אנו ממשיכים לעמוד
+                    לצידם וללוות אותם בכל שלב בדרך החיים.</p>
             </div>
-            
+
     </section>
 
     <section id="gallery" class="gallery">
@@ -548,55 +611,104 @@
                     <h3>להאיר את העולם</h3>
                     <div class="amount">₪600 לחודש</div>
                     <!-- <div class="monthly">₪600 לחודש</div> -->
-                    <p class="description">אברך צמוד שילמד עם הבחור באופן יומי ויתמוך בהתפתחותו, זכות לימוד התורה של שניהם תיזקף לזכותכם.</p>
-                    <a href="https://www.matara.pro/nedarimplus/online/?mosad=7002951" target="_blank" class="donation-btn">לתרומה</a>
+                    <p class="description">אברך צמוד שילמד עם הבחור באופן יומי ויתמוך בהתפתחותו, זכות לימוד התורה של
+                        שניהם תיזקף לזכותכם.</p>
+                    <a href="https://www.matara.pro/nedarimplus/online/?mosad=7002951" target="_blank"
+                        class="donation-btn">לתרומה</a>
                 </div>
-                
+
                 <div class="donation-card">
                     <h3>להאיר את הישיבה</h3>
                     <div class="amount">₪180 לחודש</div>
                     <!-- <div class="monthly">₪180 לחודש</div> -->
-                    <p class="description">בוער בך להאיר לו את הדרך ?<br/>קח שותפות מלאה להצלחה של בחור<br/>לאורך כל הדרך.</p>
-                    <a href="https://www.matara.pro/nedarimplus/online/?mosad=7002951" target="_blank" class="donation-btn">לתרומה</a>
+                    <p class="description">בוער בך להאיר לו את הדרך ?<br />קח שותפות מלאה להצלחה של בחור<br />לאורך כל
+                        הדרך.</p>
+                    <a href="https://www.matara.pro/nedarimplus/online/?mosad=7002951" target="_blank"
+                        class="donation-btn">לתרומה</a>
                 </div>
-                
-                
+
+
                 <div class="donation-card">
                     <h3>להאיר לו את התורה</h3>
                     <div class="amount">₪104 לחודש</div>
                     <!-- <div class="monthly">₪104 לחודש</div> -->
-                    <p class="description">חיבור בין אברך לבחור למשך חודש שלם של לימוד משותף, הכולל הכוונה אישית ותמיכה בהתקדמות הלימודית.</p>
-                    <a href="https://www.matara.pro/nedarimplus/online/?mosad=7002951" target="_blank" class="donation-btn">לתרומה</a>
+                    <p class="description">חיבור בין אברך לבחור למשך חודש שלם של לימוד משותף, הכולל הכוונה אישית ותמיכה
+                        בהתקדמות הלימודית.</p>
+                    <a href="https://www.matara.pro/nedarimplus/online/?mosad=7002951" target="_blank"
+                        class="donation-btn">לתרומה</a>
                 </div>
-                
+
                 <div class="donation-card">
                     <h3>נקודות אור לדרך</h3>
                     <div class="amount">₪52 לחודש</div>
                     <!-- <div class="monthly">₪52 לחודש</div> -->
-                    <p class="description">ביחד, נוציא בחור לטיול בסוף הזמן<br/>טיול מפנק כמו שרק לו מגיע,<br/>בהערכה להשקעתו בתפילות ובסדרים.</p>
-                    <a href="https://www.matara.pro/nedarimplus/online/?mosad=7002951" target="_blank" class="donation-btn">לתרומה</a>
+                    <p class="description">ביחד, נוציא בחור לטיול בסוף הזמן<br />טיול מפנק כמו שרק לו מגיע,<br />בהערכה
+                        להשקעתו בתפילות ובסדרים.</p>
+                    <a href="https://www.matara.pro/nedarimplus/online/?mosad=7002951" target="_blank"
+                        class="donation-btn">לתרומה</a>
                 </div>
-                
+
                 <div class="donation-card">
                     <h3>נר לדרך</h3>
                     <div class="amount">₪26 לחודש</div>
                     <!-- <div class="monthly">למשך שנה</div> -->
-                    <p class="description">השתתפותכם תהפוך למתנה משמעותית שתסייע לבחור הזקוק לכך,<br/>יחד, הדרך קלה יותר.</p>
+                    <p class="description">השתתפותכם תהפוך למתנה משמעותית שתסייע לבחור הזקוק לכך,<br />יחד, הדרך קלה
+                        יותר.</p>
                     <a href="https://nedar.im/Gusd " target="_blank" class="donation-btn">לתרומה</a>
                 </div>
-                
+
                 <div class="donation-card">
                     <h3>לשותפות בדרך</h3>
                     <div class="amount">כל סכום</div>
                     <!-- <div class="monthly">פריסה עד 12 תשלומים</div> -->
-                    <p class="description">הצטרפו כשותפים בדרך התורה בסכום המתאים לכם, כל תרומה מסייעת בהחזקת הישיבה ותמיכה בלומדים.</p>
-                    <a href="https://www.matara.pro/nedarimplus/online/?mosad=7002951" target="_blank" class="donation-btn">לתרומה</a>
+                    <p class="description">הצטרפו כשותפים בדרך התורה בסכום המתאים לכם, כל תרומה מסייעת בהחזקת הישיבה
+                        ותמיכה בלומדים.</p>
+                    <a href="https://www.matara.pro/nedarimplus/online/?mosad=7002951" target="_blank"
+                        class="donation-btn">לתרומה</a>
                 </div>
-                
+
             </div>
         </div>
     </section>
+
+    <section class="contact-form" id="contact-form">
+        <div class="contact-container">
+            <div class="section-header">
+                <h2>שלחו לנו הודעה</h2>
+                <p>נשמח לשמוע מכם</p>
+            </div>
+            <div class="form-container">
+                <form name="contact" method="POST" data-netlify="true">
+                    <input type="hidden" name="form-name" value="contact">
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="name">שם מלא:</label>
+                        <input class="form-input" type="text" name="name" id="name" required>
+                    </div>
     
+                    <div class="form-group">
+                        <label class="form-label" for="phone">טלפון:</label>
+                        <input class="form-input" type="tel" name="phone" id="phone" required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label class="form-label" for="email">אימייל:</label>
+                        <input class="form-input" type="email" name="email" id="email" required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label class="form-label" for="message">הודעה:</label>
+                        <textarea class="form-textarea" name="message" id="message" required></textarea>
+                    </div>
+    
+                    <div class="form-submit">
+                        <button type="submit" class="btn">שליחה</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <section id="contact" class="contact">
         <div class="contact-container">
             <div class="section-header">
