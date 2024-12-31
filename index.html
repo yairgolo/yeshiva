@@ -415,7 +415,6 @@
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             display: none;
-            /* Initially hidden */
             animation: fadeIn 0.5s ease-out forwards;
         }
 
@@ -435,6 +434,29 @@
             color: var(--secondary-color);
             font-size: 1.2rem;
             margin-bottom: 1.5rem;
+        }
+
+        .form-input:invalid,
+        .form-textarea:invalid {
+            border-color: var(--primary-color);
+        }
+
+        .form-input:invalid:focus,
+        .form-textarea:invalid:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 5px rgba(198, 167, 102, 0.3);
+        }
+
+        .error-message {
+            display: none;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        .form-group.error .error-message {
+            display: block;
         }
 
         @media (max-width: 768px) {
@@ -707,35 +729,39 @@
                 <p>נשמח לשמוע מכם</p>
             </div>
             <div class="form-container">
-                <!-- Success message div -->
+                <!-- Success message remains the same -->
                 <div class="success-message" id="success-message">
                     <i class="fas fa-check-circle"></i>
                     <h3>תודה על פנייתך!</h3>
                     <p>ההודעה התקבלה בהצלחה, ניצור איתך קשר בהקדם.</p>
                 </div>
 
-                <!-- Form -->
-                <form name="contact" method="POST" data-netlify="true" id="contact-form-element">
+                <!-- Updated form with concise error messages -->
+                <form name="contact" method="POST" data-netlify="true" id="contact-form-element" novalidate>
                     <input type="hidden" name="form-name" value="contact">
 
                     <div class="form-group">
                         <label class="form-label" for="name">שם מלא:</label>
                         <input class="form-input" type="text" name="name" id="name" required>
+                        <div class="error-message">אנא הזן שם</div>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label" for="phone">טלפון:</label>
                         <input class="form-input" type="tel" name="phone" id="phone" required>
+                        <div class="error-message">אנא הזן מספר טלפון</div>
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label" for="email">אימייל:</label>
-                        <input class="form-input" type="email" name="email" id="email" required>
+                        <label class="form-label optional-field" for="email">אימייל:</label>
+                        <input class="form-input" type="email" name="email" id="email">
+                        <div class="error-message">אנא הזן כתובת מייל תקינה</div>
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label" for="message">הודעה:</label>
-                        <textarea class="form-textarea" name="message" id="message" required></textarea>
+                        <label class="form-label optional-field" for="message">הודעה:</label>
+                        <textarea class="form-textarea" name="message" id="message"></textarea>
+                        <div class="error-message">אנא הזן הודעה</div>
                     </div>
 
                     <div class="form-submit">
@@ -815,6 +841,30 @@
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
 
+            form.querySelectorAll('.form-group').forEach(group => {
+                group.classList.remove('error');
+            });
+
+            let hasErrors = false;
+            const requiredFields = form.querySelectorAll('[required]');
+
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    hasErrors = true;
+                    field.closest('.form-group').classList.add('error');
+                }
+            });
+
+            const emailField = form.querySelector('#email');
+            if (emailField.value.trim() && !emailField.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+                hasErrors = true;
+                emailField.closest('.form-group').classList.add('error');
+            }
+
+            if (hasErrors) {
+                return;
+            }
+
             try {
                 const formData = new FormData(form);
                 await fetch('/', {
@@ -823,14 +873,9 @@
                     body: new URLSearchParams(formData).toString()
                 });
 
-                // Hide the form and show success message
                 form.style.display = 'none';
                 successMessage.style.display = 'block';
-
-                // Clear the form (in case user navigates back)
                 form.reset();
-
-                // Scroll to success message
                 successMessage.scrollIntoView({ behavior: 'smooth' });
 
             } catch (error) {
@@ -838,6 +883,7 @@
                 alert('אירעה שגיאה בשליחת הטופס. אנא נסו שנית מאוחר יותר.');
             }
         });
+
     </script>
 </body>
 
