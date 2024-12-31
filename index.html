@@ -754,13 +754,13 @@
 
                     <div class="form-group">
                         <label class="form-label optional-field" for="email">אימייל:</label>
-                        <input class="form-input" type="email" name="email" id="email">
+                        <input class="form-input" type="email" name="email" id="email" required>
                         <div class="error-message">אנא הזן כתובת מייל תקינה</div>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label optional-field" for="message">הודעה:</label>
-                        <textarea class="form-textarea" name="message" id="message"></textarea>
+                        <textarea class="form-textarea" name="message" id="message" required></textarea>
                         <div class="error-message">אנא הזן הודעה</div>
                     </div>
 
@@ -843,6 +843,7 @@
 
             form.querySelectorAll('.form-group').forEach(group => {
                 group.classList.remove('error');
+                group.querySelector('.error-message').style.display = 'none'; 
             });
 
             let hasErrors = false;
@@ -851,14 +852,26 @@
             requiredFields.forEach(field => {
                 if (!field.value.trim()) {
                     hasErrors = true;
-                    field.closest('.form-group').classList.add('error');
+                    const group = field.closest('.form-group');
+                    group.classList.add('error');
+                    group.querySelector('.error-message').style.display = 'block';
                 }
             });
 
             const emailField = form.querySelector('#email');
             if (emailField.value.trim() && !emailField.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
                 hasErrors = true;
-                emailField.closest('.form-group').classList.add('error');
+                const group = emailField.closest('.form-group');
+                group.classList.add('error');
+                group.querySelector('.error-message').style.display = 'block';  // הצג את הודעת השגיאה
+            }
+
+            const messageField = form.querySelector('#message');
+            if (!messageField.value.trim()) {
+                hasErrors = true;
+                const group = messageField.closest('.form-group');
+                group.classList.add('error');
+                group.querySelector('.error-message').style.display = 'block';  // הצג את הודעת השגיאה
             }
 
             if (hasErrors) {
