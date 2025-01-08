@@ -597,12 +597,24 @@
                 gap: 1rem;
                 transform: translateX(-10px);
             }
+
             .lang-en .header .logo {
                 gap: 1rem;
                 transform: translateX(-45px);
             }
+
             .lang-en .header.scrolled .logo {
                 transform: translateX(-17px);
+            }
+        }
+
+        @media (max-width: 400px) {
+            .lang-en .nav-links a {
+                font-size: 0.8rem;
+            }
+
+            .lang-en .header.scrolled .nav-links a {
+                font-size: 0.8rem;
             }
         }
     </style>
