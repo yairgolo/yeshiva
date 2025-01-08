@@ -586,6 +586,25 @@
         .lang-en {
             direction: ltr;
         }
+
+        @media (max-width: 768px) {
+            .lang-en .nav-links {
+                transform: translateX(-50px);
+                font-size: 0.9rem;
+            }
+
+            .lang-en .header.scrolled .nav-links {
+                gap: 1rem;
+                transform: translateX(-10px);
+            }
+            .lang-en .header .logo {
+                gap: 1rem;
+                transform: translateX(-45px);
+            }
+            .lang-en .header.scrolled .logo {
+                transform: translateX(-17px);
+            }
+        }
     </style>
 </head>
 
@@ -940,7 +959,7 @@
 
             } catch (error) {
                 console.error('Error:', error);
-                alert(currentLang === 'he' ? 'אירעה שגיאה בשליחת הטופס. אנא נסו שנית מאוחר יותר.': 'An error occurred while submitting the form. Please try again later.');
+                alert(currentLang === 'he' ? 'אירעה שגיאה בשליחת הטופס. אנא נסו שנית מאוחר יותר.' : 'An error occurred while submitting the form. Please try again later.');
             }
         });
 
@@ -1098,7 +1117,7 @@
             navLinks[1].textContent = translations.nav.gallery;
             navLinks[2].textContent = translations.nav.testimonials;
             navLinks[3].textContent = translations.nav.contact;
-            
+
             // About Section
             document.querySelector('#about .section-header h2').textContent = translations.about.title;
             document.querySelector('#about .section-header p').textContent = translations.about.subtitle;
@@ -1112,7 +1131,7 @@
             pAbout[1].textContent = translations.about.approach.content;
             pAbout[2].textContent = translations.about.framework.content;
             pAbout[3].textContent = translations.about.vision.content;
-            
+
 
             // Gallery Section
             document.querySelector('#gallery .section-header h2').textContent = translations.gallery.title;
