@@ -541,6 +541,51 @@
         .contact-item.clickable .btn {
             display: none;
         }
+
+
+
+        .translate-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        .translate-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .translate-btn i {
+            font-size: 24px;
+        }
+
+        [data-lang="en"] {
+            display: none;
+        }
+
+        .lang-en [data-lang="he"] {
+            display: none;
+        }
+
+        .lang-en [data-lang="en"] {
+            display: block;
+        }
+
+        .lang-en {
+            direction: ltr;
+        }
     </style>
 </head>
 
@@ -895,11 +940,249 @@
 
             } catch (error) {
                 console.error('Error:', error);
-                alert('אירעה שגיאה בשליחת הטופס. אנא נסו שנית מאוחר יותר.');
+                alert(currentLang === 'he' ? 'אירעה שגיאה בשליחת הטופס. אנא נסו שנית מאוחר יותר.': 'An error occurred while submitting the form. Please try again later.');
             }
         });
 
+
+
+        const translations = {
+            hero: {
+                title: "Derech Chaim Yeshiva",
+                subtitle: "The home that brings me back to the world of Yeshivas",
+                cta: "Join Us"
+            },
+            nav: {
+                about: "About",
+                gallery: "Gallery",
+                testimonials: "Testimonials",
+                contact: "Contact"
+            },
+            about: {
+                title: "About the Yeshiva",
+                subtitle: "Get to know Derech Chaim",
+                mainTitle: "Derech Chaim Yeshiva - A Warm Home for Every Student",
+                intro: `Derech Chaim Yeshiva in Modi'in Illit is much more than a yeshiva - it's a family. The yeshiva was founded in 2021 by Rabbi Mordechai Povidlo, with the goal of providing a unique response to students who want to reconnect with the world of yeshivas and are looking for a framework that restores their confidence in themselves and their environment.`,
+                approach: {
+                    title: "Educational Approach with Heart",
+                    content: `The yeshiva operates from the belief that every student deserves to succeed, with unconditional love, respect, and trust. We offer a supportive and welcoming framework, combining Torah study in a positive atmosphere with social activities, trips, and team-building days. Our goal is to build self-confidence, stable Jewish identity, and joyful observance of mitzvot.`
+                },
+                framework: {
+                    title: "Personalized Framework",
+                    content: `The yeshiva operates with a flexible approach, without rigid rules, focusing on providing a sense of belonging and love. Each student receives a personalized program, including private conversations, daily learning, and shared experiences. Over the years, the yeshiva has become a home for dozens of students who have reconnected with the world of Torah and mitzvot.`
+                },
+                vision: {
+                    title: "Yeshiva Vision",
+                    content: `Derech Chaim Yeshiva aspires to be a beacon of light for every student seeking a new path. We are here to believe in them, support them, and be the home they need to rediscover themselves. With a dedicated staff and an open heart, we continue to stand by their side and accompany them at every stage of their life journey.`
+                }
+            },
+            gallery: {
+                title: "Gallery",
+                subtitle: "A glimpse into daily life at the yeshiva"
+            },
+            testimonials: {
+                title: "Student Testimonials",
+                subtitle: "What our graduates say",
+                testimonial1: {
+                    quote: "The rabbis and staff were always there for me, in learning and in life",
+                    author: "Yossi Leibowitz, Class of 2023"
+                },
+                testimonial2: {
+                    quote: "The yeshiva changed my life. Here I found my path in learning and serving Hashem",
+                    author: "Kobi Bernstein, Current Student"
+                },
+                testimonial3: {
+                    quote: "The family atmosphere and high level created the perfect combination for me",
+                    author: "Moshe Levinger, Class of 2022"
+                }
+            },
+            donations: {
+                title: "Your Part",
+                subtitle: "Be a partner in the students' success",
+                cards: {
+                    card1: {
+                        title: "Illuminate the World",
+                        amount: "₪600 monthly",
+                        description: "A dedicated avreich who will learn with the student daily and support their development, the merit of both their Torah study will be credited to you.",
+                        button: "donate"
+                    },
+                    card2: {
+                        title: "Illuminate the Yeshiva",
+                        amount: "₪180 monthly",
+                        description: "Burning to light his way? Take full partnership in a student's success throughout the journey.",
+                        button: "donate"
+                    },
+                    card3: {
+                        title: "Illuminate Torah",
+                        amount: "₪104 monthly",
+                        description: "Connect an avreich with a student for a full month of joint learning, including personal guidance and support in learning progress.",
+                        button: "donate"
+                    },
+                    card4: {
+                        title: "Points of Light",
+                        amount: "₪52 monthly",
+                        description: "Together, we'll take a student on an end-of-term trip, a pampering trip as they deserve, in appreciation of their investment in prayers and learning sessions.",
+                        button: "donate"
+                    },
+                    card5: {
+                        title: "Light for the Way",
+                        amount: "₪26 monthly",
+                        description: "Your participation will become a meaningful gift that will help a student in need. Together, the path is easier.",
+                        button: "donate"
+                    },
+                    card6: {
+                        title: "Partnership in the Journey",
+                        amount: "Any amount",
+                        description: "Join as partners in the Torah path with an amount that suits you. Every donation helps maintain the yeshiva and support the learners.",
+                        button: "donate"
+                    }
+                }
+            },
+            contact: {
+                title: "Contact Us",
+                subtitle: "We'd love to hear from you",
+                form: {
+                    title: "Send us a message",
+                    subtitle: "We'll be happy to hear from you",
+                    name: "Full Name:",
+                    nameError: "Please enter a name",
+                    phone: "Phone:",
+                    phoneError: "Please enter a phone number",
+                    email: "Email:",
+                    emailError: "Please enter a valid email address",
+                    message: "Message:",
+                    messageError: "Please enter a message",
+                    submit: "Send",
+                    success: {
+                        title: "Thank you for your message!",
+                        message: "Your message has been received successfully, we will contact you soon."
+                    }
+                },
+                address: {
+                    title: "Address",
+                    content: "5 Ponovezh St., Modi'in Illit"
+                },
+                phone: {
+                    title: "Phone",
+                    content: "+972-527-699-707"
+                },
+                whatsapp: {
+                    title: "WhatsApp"
+                }
+            }
+        };
+
+        let currentLang = 'he';
+
+        function toggleLanguage() {
+            const body = document.body;
+            currentLang = currentLang === 'he' ? 'en' : 'he';
+            body.classList.toggle('lang-en');
+
+            if (currentLang === 'en') {
+                updateContent();
+            } else {
+                location.reload();
+            }
+        }
+
+        function updateContent() {
+            // Hero Section
+            document.querySelector('.hero h1').textContent = translations.hero.title;
+            document.querySelector('.hero p').textContent = translations.hero.subtitle;
+            document.querySelector('.hero .btn').textContent = translations.hero.cta;
+
+            // Navigation
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks[0].textContent = translations.nav.about;
+            navLinks[1].textContent = translations.nav.gallery;
+            navLinks[2].textContent = translations.nav.testimonials;
+            navLinks[3].textContent = translations.nav.contact;
+            
+            // About Section
+            document.querySelector('#about .section-header h2').textContent = translations.about.title;
+            document.querySelector('#about .section-header p').textContent = translations.about.subtitle;
+            const h2About = document.querySelectorAll('.about-content h2');
+            h2About[0].textContent = translations.about.mainTitle;
+            h2About[1].textContent = translations.about.approach.title;
+            h2About[2].textContent = translations.about.framework.title;
+            h2About[3].textContent = translations.about.vision.title;
+            const pAbout = document.querySelectorAll('.about-content p');
+            pAbout[0].textContent = translations.about.intro;
+            pAbout[1].textContent = translations.about.approach.content;
+            pAbout[2].textContent = translations.about.framework.content;
+            pAbout[3].textContent = translations.about.vision.content;
+            
+
+            // Gallery Section
+            document.querySelector('#gallery .section-header h2').textContent = translations.gallery.title;
+            document.querySelector('#gallery .section-header p').textContent = translations.gallery.subtitle;
+
+            // Testimonials Section
+            document.querySelector('#testimonials .section-header h2').textContent = translations.testimonials.title;
+            document.querySelector('#testimonials .section-header p').textContent = translations.testimonials.subtitle;
+
+            const testimonialCards = document.querySelectorAll('.testimonial-card');
+            testimonialCards[0].querySelector('.quote').textContent = translations.testimonials.testimonial1.quote;
+            testimonialCards[0].querySelector('.author').textContent = translations.testimonials.testimonial1.author;
+            testimonialCards[1].querySelector('.quote').textContent = translations.testimonials.testimonial2.quote;
+            testimonialCards[1].querySelector('.author').textContent = translations.testimonials.testimonial2.author;
+            testimonialCards[2].querySelector('.quote').textContent = translations.testimonials.testimonial3.quote;
+            testimonialCards[2].querySelector('.author').textContent = translations.testimonials.testimonial3.author;
+
+            // Donations Section
+            document.querySelector('#donations .section-header h2').textContent = translations.donations.title;
+            document.querySelector('#donations .section-header p').textContent = translations.donations.subtitle;
+
+            const donationCards = document.querySelectorAll('.donation-card');
+            const donationsTranslations = translations.donations.cards;
+
+            Object.keys(donationsTranslations).forEach((key, index) => {
+                const card = donationCards[index];
+                const translation = donationsTranslations[`card${index + 1}`];
+
+                card.querySelector('h3').textContent = translation.title;
+                card.querySelector('.amount').textContent = translation.amount;
+                card.querySelector('.description').textContent = translation.description;
+                card.querySelector('a').textContent = translation.button;
+            });
+
+            // Contact Form Section
+            document.querySelector('#contact-form .section-header h2').textContent = translations.contact.form.title;
+            document.querySelector('#contact-form .section-header p').textContent = translations.contact.form.subtitle;
+            const labelForm = document.querySelectorAll('.form-label');
+            labelForm[0].textContent = translations.contact.form.name;
+            labelForm[1].textContent = translations.contact.form.phone;
+            labelForm[2].textContent = translations.contact.form.email;
+            labelForm[3].textContent = translations.contact.form.message;
+
+            const errorForm = document.querySelectorAll('.error-message');
+            errorForm[0].textContent = translations.contact.form.nameError;
+            errorForm[1].textContent = translations.contact.form.phoneError;
+            errorForm[2].textContent = translations.contact.form.emailError;
+            errorForm[3].textContent = translations.contact.form.messageError;
+            document.querySelector('.form-submit .btn').textContent = translations.contact.form.submit;
+
+            document.querySelector('.success-message h3').textContent = translations.contact.form.success.title;
+            document.querySelector('.success-message p').textContent = translations.contact.form.success.message;
+
+
+            // Contact Section
+            document.querySelector('#contact .section-header h2').textContent = translations.contact.title;
+            document.querySelector('#contact .section-header p').textContent = translations.contact.subtitle;
+
+            const contactItems = document.querySelectorAll('.contact-item h3');
+            contactItems[0].textContent = translations.contact.address.title;
+            contactItems[1].textContent = translations.contact.phone.title;
+            contactItems[2].textContent = translations.contact.whatsapp.title;
+            const contactPItems = document.querySelectorAll('.contact-item p');
+            contactPItems[0].textContent = translations.contact.address.content;
+            contactPItems[1].textContent = translations.contact.phone.content;
+        }
     </script>
+    <button class="translate-btn" onclick="toggleLanguage()" title="Translate">
+        <i class="fas fa-language"></i>
+    </button>
 </body>
 
 </html>
