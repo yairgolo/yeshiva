@@ -1,6 +1,0 @@
-[[redirects]]
-  from = "/*"
-  to = "https://derech-chaim.com/:splat"
-  status = 301
-  force = true
-  redirect_in_https = true
