@@ -1,11 +1,11 @@
 [[redirects]]
-  from = "https://derech-chaim.netlify.app/*"
+  from = "http://www.derech-chaim.com/*"
   to = "https://derech-chaim.com/:splat"
   status = 301
   force = true
 
 [[redirects]]
-  from = "http://www.derech-chaim.com/*"
+  from = "https://www.derech-chaim.com/*"
   to = "https://derech-chaim.com/:splat"
   status = 301
   force = true
@@ -17,7 +17,7 @@
   force = true
 
 [[redirects]]
-  from = "https://www.derech-chaim.com/*"
+  from = "https://derech-chaim.netlify.app/*"
   to = "https://derech-chaim.com/:splat"
   status = 301
   force = true
