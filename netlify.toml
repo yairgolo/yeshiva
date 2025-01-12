@@ -5,18 +5,6 @@
   force = true
 
 [[redirects]]
-  from = "https://www.derech-chaim.com/*"
-  to = "https://derech-chaim.com/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "http://derech-chaim.com/*"
-  to = "https://derech-chaim.com/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "https://derech-chaim.netlify.app/*"
   to = "https://derech-chaim.com/:splat"
   status = 301
