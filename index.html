@@ -552,6 +552,8 @@
             display: none;
         }
 
+
+
         .translate-btn {
             position: fixed;
             bottom: 20px;
@@ -574,8 +576,11 @@
         .translate-btn:hover {
             transform: scale(1.1);
         }
-    </style>
-    <style>
+
+        .translate-btn i {
+            font-size: 24px;
+        }
+
         .chatbot-btn {
             position: fixed;
             bottom: 20px;
@@ -593,10 +598,60 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
             z-index: 1000;
             transition: transform 0.3s ease;
+            i {
+                font-size: 24px;
+            }
         }
 
         .chatbot-btn:hover {
             transform: scale(1.1);
+        }
+
+        [data-lang="en"] {
+            display: none;
+        }
+
+        .lang-en [data-lang="he"] {
+            display: none;
+        }
+
+        .lang-en [data-lang="en"] {
+            display: block;
+        }
+
+        .lang-en {
+            direction: ltr;
+        }
+
+        @media (max-width: 768px) {
+            .lang-en .nav-links {
+                transform: translateX(-50px);
+                font-size: 0.9rem;
+            }
+
+            .lang-en .header.scrolled .nav-links {
+                gap: 1rem;
+                transform: translateX(-10px);
+            }
+
+            .lang-en .header .logo {
+                gap: 1rem;
+                transform: translateX(-45px);
+            }
+
+            .lang-en .header.scrolled .logo {
+                transform: translateX(-17px);
+            }
+        }
+
+        @media (max-width: 400px) {
+            .lang-en .nav-links a {
+                font-size: 0.8rem;
+            }
+
+            .lang-en .header.scrolled .nav-links a {
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
@@ -1365,11 +1420,13 @@
           "telephone": "+972527699707"
         }
         </script>
-    <button class="chatbot-btn" onclick="window.location.href='https://chatgpt.com/g/g-67c6d4ef860c81918485d4c73b72ec3b-yshybt-drk-khyym'" title="צ'אטבוט">
-        <i class="fas fa-comment-dots"></i>
-    </button>
     <button class="translate-btn" onclick="toggleLanguage()" title="Translate">
         <i class="fas fa-language"></i>
+    </button>
+    <button class="chatbot-btn"
+        onclick="window.location.href='https://chatgpt.com/g/g-67c6d4ef860c81918485d4c73b72ec3b-yshybt-drk-khyym'"
+        title="צ'אטבוט">
+        <i class="fas fa-comment-dots"></i>
     </button>
 </body>
 
